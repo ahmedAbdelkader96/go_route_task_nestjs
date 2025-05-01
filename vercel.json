@@ -1,5 +1,4 @@
 {
-    "version": 2,
     "builds": [
       {
           "src": "dist/main.ts",
@@ -9,8 +8,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "dist/main.ts",
-        "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"]
+        "dest": "dist/main.ts"
       }
     ]
   }
