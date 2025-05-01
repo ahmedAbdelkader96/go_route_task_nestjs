@@ -15,7 +15,7 @@ async function bootstrap() {
     app.useGlobalFilters(new http_exception_filter_1.HttpExceptionFilter());
     app.useGlobalInterceptors(new logging_interceptor_1.LoggingInterceptor());
     app.useGlobalPipes(new validation_pipe_1.ValidationPipe());
-    await app.listen(3001);
+    await app.listen(process.env.PORT || 3001);
     console.log(`Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
