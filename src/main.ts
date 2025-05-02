@@ -7,7 +7,14 @@ import { LoggingInterceptor } from './common/interceptors/logging.interceptor';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: ['http://localhost:5173', 'http://localhost:3001', 'http://localhost:3000'], // Add your React app's origin
+    origin: (origin, callback) => {
+      const allowedOrigins = ['http://localhost:5173', 'http://localhost:3001', 'http://localhost:3000'];
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true,
   });
