@@ -15,12 +15,10 @@ import { AuthGuard } from '../../common/guards/auth.guard';
 import { UpdateUserDto } from './users.dto';
 
 @Controller('users')
-@UseGuards(AuthGuard)
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
   @Get()
-  @HttpCode(200)
   async findAll() {
     return this.usersService.findAll();
   }
