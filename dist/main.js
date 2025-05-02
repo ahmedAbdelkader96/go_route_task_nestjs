@@ -24,7 +24,6 @@ async function bootstrap() {
     app.useGlobalInterceptors(new logging_interceptor_1.LoggingInterceptor());
     app.useGlobalPipes(new validation_pipe_1.ValidationPipe());
     await app.listen(process.env.PORT || 3000);
-    console.log(`/////////////////////////////////***********Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map
