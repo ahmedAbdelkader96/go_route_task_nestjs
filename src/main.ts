@@ -27,7 +27,7 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe());
 
   // Listen on the dynamic port assigned by Vercel or fallback to 3000
-  await app.listen(process.env.PORT || 3000);
+  await app.listen(process.env.PORT || 3000); 
   console.log(`/////////////////////////////////***********Application is running on: ${await app.getUrl()}`);
 }
 

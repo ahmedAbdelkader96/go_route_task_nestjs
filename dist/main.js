@@ -8,15 +8,23 @@ const logging_interceptor_1 = require("./common/interceptors/logging.interceptor
 async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
-        origin: 'http://localhost:3001',
-        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        origin: (origin, callback) => {
+            const allowedOrigins = ['http://localhost:5173'];
+            if (!origin || allowedOrigins.includes(origin)) {
+                callback(null, true);
+            }
+            else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
         credentials: true,
     });
     app.useGlobalFilters(new http_exception_filter_1.HttpExceptionFilter());
     app.useGlobalInterceptors(new logging_interceptor_1.LoggingInterceptor());
     app.useGlobalPipes(new validation_pipe_1.ValidationPipe());
-    await app.listen(process.env.PORT || 3001);
-    console.log(`Application is running on: ${await app.getUrl()}`);
+    await app.listen(process.env.PORT || 3000);
+    console.log(`/////////////////////////////////***********Application is running on: ${await app.getUrl()}`);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map
