@@ -10,7 +10,7 @@ async function bootstrap() {
   // Enable CORS with dynamic origin handling
   app.enableCors({
     origin: (origin, callback) => {
-      const allowedOrigins = ['http://localhost:5173']; // Add your frontend origin(s) here
+      const allowedOrigins = ['http://localhost:5173','https://go-route-task-reactjs.vercel.app']; // Add your frontend origin(s) here
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {

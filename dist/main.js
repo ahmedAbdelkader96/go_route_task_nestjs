@@ -9,7 +9,7 @@ async function bootstrap() {
     const app = await core_1.NestFactory.create(app_module_1.AppModule);
     app.enableCors({
         origin: (origin, callback) => {
-            const allowedOrigins = ['http://localhost:5173'];
+            const allowedOrigins = ['http://localhost:5173', 'https://go-route-task-reactjs.vercel.app'];
             if (!origin || allowedOrigins.includes(origin)) {
                 callback(null, true);
             }
