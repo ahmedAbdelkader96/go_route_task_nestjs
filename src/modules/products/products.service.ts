@@ -11,7 +11,7 @@ export class ProductsService {
   async findAll(page: number, limit: number, query: string): Promise<Product[]> {
     const skip = (page - 1) * limit; // Calculate the number of documents to skip
     const q = query
-    ? { name: { $regex: query, $options: 'i' } } // Assuming you're using MongoDB
+    ? { title: { $regex: query, $options: 'i' } } // Assuming you're using MongoDB
     : {};
     return this.productModel.find(q).skip(skip).limit(limit).exec();
   }

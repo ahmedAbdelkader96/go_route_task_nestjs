@@ -23,7 +23,7 @@ let ProductsService = class ProductsService {
     async findAll(page, limit, query) {
         const skip = (page - 1) * limit;
         const q = query
-            ? { name: { $regex: query, $options: 'i' } }
+            ? { title: { $regex: query, $options: 'i' } }
             : {};
         return this.productModel.find(q).skip(skip).limit(limit).exec();
     }
