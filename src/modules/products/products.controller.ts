@@ -22,8 +22,9 @@ export class ProductsController {
   async findAll(
     @Query('page') page: number = 1,
     @Query('limit') limit: number = 10,
+    @Query('query') query: string,
   ) {
-    return this.productsService.findAll(page, limit);
+    return this.productsService.findAll(page, limit,query);
   }
 
   @Get(':id')

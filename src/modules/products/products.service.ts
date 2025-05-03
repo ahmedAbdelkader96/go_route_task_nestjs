@@ -8,9 +8,12 @@ import { CreateProductDto, UpdateProductDto } from './products.dto';
 export class ProductsService {
   constructor(@InjectModel('Product') private productModel: Model<Product>) { }
 
-  async findAll(page: number, limit: number): Promise<Product[]> {
+  async findAll(page: number, limit: number, query: string): Promise<Product[]> {
     const skip = (page - 1) * limit; // Calculate the number of documents to skip
-    return this.productModel.find().skip(skip).limit(limit).exec();
+    const q = query
+    ? { name: { $regex: query, $options: 'i' } } // Assuming you're using MongoDB
+    : {};
+    return this.productModel.find(q).skip(skip).limit(limit).exec();
   }
 
   async findById(id: string): Promise<Product> {

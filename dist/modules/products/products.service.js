@@ -20,9 +20,12 @@ let ProductsService = class ProductsService {
     constructor(productModel) {
         this.productModel = productModel;
     }
-    async findAll(page, limit) {
+    async findAll(page, limit, query) {
         const skip = (page - 1) * limit;
-        return this.productModel.find().skip(skip).limit(limit).exec();
+        const q = query
+            ? { name: { $regex: query, $options: 'i' } }
+            : {};
+        return this.productModel.find(q).skip(skip).limit(limit).exec();
     }
     async findById(id) {
         if (!(0, mongoose_2.isValidObjectId)(id)) {
