@@ -1,0 +1,555 @@
+{
+	"info": {
+		"_postman_id": "22705585-c8d6-4f30-84b8-de09ab726b45",
+		"name": "go_router_task",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17993365"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "id",
+									"value": "681381bc661ee2d23a9d765f",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Yohh",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "jobTitle",
+									"value": "zzz",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://[::1]:3001/users/6813b21c801031e4203761f0",
+							"protocol": "http",
+							"host": [
+								"[::1]"
+							],
+							"port": "3001",
+							"path": [
+								"users",
+								"6813b21c801031e4203761f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/users",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/users/6814f5f4310cf7d74785a66a",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"users",
+								"6814f5f4310cf7d74785a66a"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/users/6814f5f4310cf7d74785a66a",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"users",
+								"6814f5f4310cf7d74785a66a"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Cucumber",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1.49",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Groceries",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "https://cdn.dummyjson.com/product-images/groceries/cucumber/1.webp",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/products",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "title",
+									"value": "Cucumber Test",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1.49",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "Groceries",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"value": "https://cdn.dummyjson.com/product-images/groceries/cucumber/1.webp",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/products/6816ad272b97ba75dff77f84",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"products",
+								"6816ad272b97ba75dff77f84"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findAll",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+									"    .tftable tr {background-color:#ffffff;}",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+									"    .tftable tr:hover {background-color:#e0ffff;}",
+									"</style>",
+									"",
+									"<table class=\"tftable\" border=\"1\">",
+									"    <tr>",
+									"        <th>Title</th>",
+									"        <th>Description</th>",
+									"        <th>Price</th>",
+									"        <th>Image</th>",
+									"        <th>Category</th>",
+									"        <th>Created At</th>",
+									"        <th>Updated At</th>",
+									"        <th>ID</th>",
+									"    </tr>",
+									"    ",
+									"    {{#each response}}",
+									"        <tr>",
+									"            <td>{{title}}</td>",
+									"            <td>{{description}}</td>",
+									"            <td>{{price}}</td>",
+									"            <td>{{image}}</td>",
+									"            <td>{{category}}</td>",
+									"            <td>{{createdAt}}</td>",
+									"            <td>{{updatedAt}}</td>",
+									"            <td>{{id}}</td>",
+									"        </tr>",
+									"    {{/each}}",
+									"</table>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    return {response: pm.response.json()}",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/products?page=1&limit=10&query=Premium",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "query",
+									"value": "Premium"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "findById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/products/6813bb9ffa42094e60ebf3ae",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"products",
+								"6813bb9ffa42094e60ebf3ae"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/products/6816ad272b97ba75dff77f84",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"products",
+								"6816ad272b97ba75dff77f84"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Ahmed",
+									"type": "text"
+								},
+								{
+									"key": "jobTitle",
+									"value": "Software Engineer",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "ahmed@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "#Ahm123456789",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/auth/signup",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "ahmed@test.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "#Ahm01200224741",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/auth/signin",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refreshToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "refreshToken",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://go-route-task-nestjs.vercel.app/auth/refreshToken",
+							"protocol": "https",
+							"host": [
+								"go-route-task-nestjs",
+								"vercel",
+								"app"
+							],
+							"path": [
+								"auth",
+								"refreshToken"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "accessToken",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "refreshToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
